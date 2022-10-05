@@ -1,0 +1,59 @@
+/* general adjustments */
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+:root {
+    --jedi-blue: #00355C;
+    --sith-red: #710201;
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* character select screen */
+
+.character-selector {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 10px;
+}
+
+.jedi {
+    background-color: var(--jedi-blue);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.vs {
+    background: repeating-linear-gradient(78.69deg, var(--jedi-blue) 0%, var(--jedi-blue) 50%, var(--sith-red) 50%, var(--sith-red) 100%);
+    height: 500px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.sith {
+    background-color: var(--sith-red);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.jedi, .sith {
+    height: 500px;
+    width: 500px;
+}
