@@ -16,6 +16,7 @@
 }
 
 body {
+    background-color: #1f1f1f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,9 +27,19 @@ body {
 
 .character-selector {
     display: flex;
+    position: absolute;
     flex-direction: row;
     box-shadow: 5px 5px 15px black;
     border-radius: 10px;
+}
+
+.choose-your-char {
+    font-size: 8rem;
+    color: white;
+    position: absolute;
+    top: -100px;
+    text-align: center;
+    width: 100%;
 }
 
 .jedi {
@@ -56,4 +67,34 @@ body {
 .jedi, .sith {
     height: 500px;
     width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.photo-div {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid goldenrod;
+    justify-self: center;
+}
+
+.jedi > .photo-div {
+    background-color: #001e33;
+}
+
+.sith > .photo-div {
+    background-color: #3d0100;
+}
+
+.photo-div > img {
+    height: 140px;
+    width: auto;
+}
+
+.photo-div:hover {
+    background-color: rgb(173, 131, 24);
 }
