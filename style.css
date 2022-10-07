@@ -139,10 +139,17 @@ body {
 .game {
     height: 100vh;
     width: 100vw;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    display: none;
+    position: absolute;
+}
+
+.header {
+    position: absolute;
+    font-size: 10rem;
+    color: whitesmoke;
+    top: 50px;
 }
 
 .gameboard {
@@ -153,9 +160,14 @@ body {
     width: 500px;
 }
 
+.gamebox:hover {
+    background-color: #252525;
+}
+
 .zero {
     border-bottom: 1px whitesmoke solid;
     border-right: 1px whitesmoke solid;
+    border-top-left-radius: 30px;
 }
 
 .one {
@@ -165,6 +177,7 @@ body {
 .two {
     border-left: 1px whitesmoke solid;
     border-bottom: 1px whitesmoke solid;
+    border-top-right-radius: 30px;
 }
 
 .three {
@@ -178,6 +191,7 @@ body {
 .six {
     border-right: 1px whitesmoke solid;
     border-top: 1px whitesmoke solid;
+    border-bottom-left-radius: 30px;
 }
 
 .seven {
@@ -187,4 +201,5 @@ body {
 .eight {
     border-top: 1px whitesmoke solid;
     border-left: 1px whitesmoke solid;
+    border-bottom-right-radius: 30px;
 }

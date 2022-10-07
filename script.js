@@ -5,7 +5,7 @@ const yoda = document.querySelector(".yoda");
 
 const vader = document.querySelector(".vader");
 const palpatine = document.querySelector(".palpatine");
-const maul = document.querySelector(".maul > img");
+const maul = document.querySelector(".maul");
 const dooku = document.querySelector(".dooku");
 
 let chosenJedi = "";
