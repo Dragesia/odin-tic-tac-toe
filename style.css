@@ -133,3 +133,58 @@ body {
 .photo-div:hover {
     background-color: rgb(173, 131, 24);
 }
+
+/* game screen */
+
+.game {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 500px;
+    width: 500px;
+}
+
+.zero {
+    border-bottom: 1px whitesmoke solid;
+    border-right: 1px whitesmoke solid;
+}
+
+.one {
+    border-bottom: 1px whitesmoke solid;
+}
+
+.two {
+    border-left: 1px whitesmoke solid;
+    border-bottom: 1px whitesmoke solid;
+}
+
+.three {
+    border-right: 1px whitesmoke solid;
+}
+
+.five {
+    border-left: 1px whitesmoke solid;
+}
+
+.six {
+    border-right: 1px whitesmoke solid;
+    border-top: 1px whitesmoke solid;
+}
+
+.seven {
+    border-top: 1px whitesmoke solid;
+}
+
+.eight {
+    border-top: 1px whitesmoke solid;
+    border-left: 1px whitesmoke solid;
+}

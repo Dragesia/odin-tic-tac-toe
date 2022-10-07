@@ -84,12 +84,14 @@ sith.forEach((sithDiv) => {
 });
 
 const selectScreen = document.querySelector(".character-selector");
+const gameScreen = document.querySelector(".game");
 const startBtn = document.querySelector(".start-game");
 
 function startGame() {
     if (!chosenJedi || !chosenSith) return;
 
     selectScreen.style = "display: none;";
+    gameScreen.style = "display: flex;"
 }
 
 startBtn.onclick = startGame;
