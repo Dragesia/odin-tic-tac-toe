@@ -82,3 +82,14 @@ const sith = document.querySelectorAll(".sith > .photo-div");
 sith.forEach((sithDiv) => {
     sithDiv.onclick = chooseSith;
 });
+
+const selectScreen = document.querySelector(".character-selector");
+const startBtn = document.querySelector(".start-game");
+
+function startGame() {
+    if (!chosenJedi || !chosenSith) return;
+
+    selectScreen.style = "display: none;";
+}
+
+startBtn.onclick = startGame;
