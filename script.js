@@ -94,6 +94,7 @@ function startGame() {
     gameScreen.style = "display: flex;"
 }
 
+let gameBoard = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 let gameTour = 2;
 
 startBtn.onclick = startGame;
@@ -107,10 +108,14 @@ function playRound(e) {
     sithSign.classList.add("sign");
 
     if (gameTour % 2 == 0) {
+        gameBoard[e.target.getAttribute("data-index")] = "jedi";
         e.target.appendChild(jediSign);
     } else {
+        gameBoard[e.target.getAttribute("data-index")] = "sith";
         e.target.appendChild(sithSign);
     }
+
+    checkWinner();
 
     gameTour++;
 }
@@ -120,3 +125,36 @@ const gameboxes = document.querySelectorAll(".gamebox");
 gameboxes.forEach((gamebox) => {
     gamebox.addEventListener('click', playRound);
 });
+
+function checkWinner() {
+    const winnerWays = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ];
+
+    const allEqual = arr => arr.every( v => v === arr[0] );
+
+    for (let i=0; i<8; i++) {
+        console.log(i);
+        let temp = [];
+        for (let j=0; j<3; j++) {
+            console.log(j);
+            temp.push(gameBoard[winnerWays[i][j]]);
+        }
+        if (allEqual(temp)) {
+            const winner = temp[0];
+            finishGame();
+            return;
+        }
+    }
+}
+
+function finishGame() {
+    console.log("oyun bitti hacı");
+}
