@@ -160,6 +160,12 @@ body {
     width: 500px;
 }
 
+.gamebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .gamebox:hover {
     background-color: #252525;
 }
@@ -203,3 +209,9 @@ body {
     border-left: 1px whitesmoke solid;
     border-bottom-right-radius: 30px;
 }
+
+.sign {
+    height: 120px;
+    width: auto;
+}
+

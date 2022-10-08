@@ -94,4 +94,29 @@ function startGame() {
     gameScreen.style = "display: flex;"
 }
 
+let gameTour = 2;
+
 startBtn.onclick = startGame;
+
+function playRound(e) {
+    if (!e.target.classList.contains("gamebox")) return;
+
+    let jediSign = document.querySelector(`.${chosenJedi} > img`).cloneNode();
+    let sithSign = document.querySelector(`.${chosenSith} > img`).cloneNode();
+    jediSign.classList.add("sign");
+    sithSign.classList.add("sign");
+
+    if (gameTour % 2 == 0) {
+        e.target.appendChild(jediSign);
+    } else {
+        e.target.appendChild(sithSign);
+    }
+
+    gameTour++;
+}
+
+const gameboxes = document.querySelectorAll(".gamebox");
+
+gameboxes.forEach((gamebox) => {
+    gamebox.addEventListener('click', playRound);
+});
