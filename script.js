@@ -99,6 +99,8 @@ let gameTour = 2;
 
 startBtn.onclick = startGame;
 
+const turnColor = document.querySelector(".turn");
+
 function playRound(e) {
     if (!e.target.classList.contains("gamebox")) return;
 
@@ -118,6 +120,14 @@ function playRound(e) {
     checkWinner();
 
     gameTour++;
+
+    if (gameTour % 2) {
+        turnColor.innerHTML = "Sith";
+        turnColor.classList.add("sithTurn");
+    } else {
+        turnColor.innerHTML = "Jedi";
+        turnColor.classList.remove("sithTurn");
+    }
 }
 
 const gameboxes = document.querySelectorAll(".gamebox");
@@ -125,6 +135,8 @@ const gameboxes = document.querySelectorAll(".gamebox");
 gameboxes.forEach((gamebox) => {
     gamebox.addEventListener('click', playRound);
 });
+
+let winner = "no one";
 
 function checkWinner() {
     const winnerWays = [
@@ -141,20 +153,29 @@ function checkWinner() {
     const allEqual = arr => arr.every( v => v === arr[0] );
 
     for (let i=0; i<8; i++) {
-        console.log(i);
         let temp = [];
         for (let j=0; j<3; j++) {
-            console.log(j);
             temp.push(gameBoard[winnerWays[i][j]]);
         }
         if (allEqual(temp)) {
-            const winner = temp[0];
+            winner = temp[0];
             finishGame();
             return;
         }
     }
+
+    if (gameTour == 10) finishGame();
 }
 
+const endScreen = document.querySelector(".end");
+const winnerText = document.querySelector(".winner");
+
 function finishGame() {
-    console.log("oyun bitti hacı");
+    function capitalizeFirstLetter(string) {
+        if (string == "no one") return "no one";
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    gameScreen.style = "display: none;";
+    winnerText.innerHTML = capitalizeFirstLetter(winner);
+    endScreen.style = "display: flex;";
 }
